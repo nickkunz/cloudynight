@@ -16,5 +16,11 @@ The project was implemented in Arduino and the code is intended for execution on
 
 This work was completed with the help of Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019.
 
-![Implementation](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
+## Implementation
+![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
 ![Implementation2](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation2.jpg)
+
+## Analysis
+![Plot1](https://github.com/nickkunz/cloudynight/blob/master/Images/humanplot.jpg)
+![Plot2](https://github.com/nickkunz/cloudynight/blob/master/Images/directionplot.jpg)
+![Plot3](https://github.com/nickkunz/cloudynight/blob/master/Images/childrenplot.jpg)
