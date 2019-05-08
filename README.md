@@ -16,5 +16,5 @@ The project was implemented in Arduino and the code is intended for execution on
 
 This work was completed with the help of Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019.
 
-![Rendering](https://github.com/nickkunz/bloudynight/blob/master/images/implementation.gif)
-![Rendering](https://github.com/nickkunz/bloudynight/blob/master/images/implementation2.gif)
+![Implementation](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
+![Implementation2](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation2.jpeg)
