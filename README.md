@@ -12,7 +12,7 @@ It was found that both directionality of human movement and the presence of chil
 
 Although this was assumed, and a rigorous analysis was not conducted to assess the number of occurrences of each event, it was more important that this project demonstrated that capturing these areas of interest was possible. It was determined that the Cloudy Night prototype was a useful device for creating interactive illuminances, while assessing rough approximations of public park safety and human movement through both directionality and the presence of children.
 
-The project was implemented in Arduino and the code is intended for execution on the Arduino platform. The operational hardware used in this prototype was: Arduino Uno, SD Data Logger Shield for Arduino, Sparkfun Qwiic Shield for Arduino, Sparkfun Qwiic Connect Cables, SparkFun Human Presence Sensor Breakout, Adafruit 12mm Diffused Thin Digital RGB LED Pixels (Strand of 25).
+The project was implemented in Arduino. The code include here is intended for execution on the Arduino platform. The operational hardware used in this prototype was: Arduino Uno, SD Data Logger Shield for Arduino, Sparkfun Qwiic Shield for Arduino, Sparkfun Qwiic Connect Cables, SparkFun Human Presence Sensor Breakout, Adafruit 12mm Diffused Thin Digital RGB LED Pixels (Strand of 25).
 
 This work was completed with the help of Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019.
 
