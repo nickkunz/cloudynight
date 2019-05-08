@@ -1,6 +1,6 @@
 # Interactive Lighting & Data Collection with Arduino
 
-![Rendering](https://github.com/nickkunz/bloudynight/blob/master/images/rendering.gif)
+![Rendering](https://github.com/nickkunz/bloudynight/blob/master/images/rendering.jpg)
 
 
 ## Executive Summary
