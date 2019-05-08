@@ -20,7 +20,7 @@ This work was completed with the help of Shuyang Huang and Shiori Osakata in par
 ![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
 ![Implementation2](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation2.jpg)
 
-## Analysis
+## Data Collection
 ![Plot1](https://github.com/nickkunz/cloudynight/blob/master/Images/humanplot.jpg)
 ![Plot2](https://github.com/nickkunz/cloudynight/blob/master/Images/directionplot.jpg)
 ![Plot3](https://github.com/nickkunz/cloudynight/blob/master/Images/childrenplot.jpg)
