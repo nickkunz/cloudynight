@@ -14,12 +14,20 @@ Although this was assumed, and a rigorous analysis was not conducted to assess t
 
 The project was implemented in Arduino. The code include here is intended for execution on the Arduino platform. The operational hardware used in this prototype was: Arduino Uno, SD Data Logger Shield for Arduino, Sparkfun Qwiic Shield for Arduino, Sparkfun Qwiic Connect Cables, SparkFun Human Presence Sensor Breakout, Adafruit 12mm Diffused Thin Digital RGB LED Pixels (Strand of 25).
 
-This work was completed with the help of Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019.
+This work was completed with Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019.
 
 ## Concept
 ![Sketch](https://github.com/nickkunz/cloudynight/blob/master/Images/sketch.png)
 ![Concept](https://github.com/nickkunz/cloudynight/blob/master/Images/concept.png)
 ![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation1.png)
+
+## Process & Technology
+![Cloud](https://github.com/nickkunz/cloudynight/blob/master/Images/cloud.jpg)
+![Sensors](https://github.com/nickkunz/cloudynight/blob/master/Images/sensors.jpg)
+![Sensor Detail](https://github.com/nickkunz/cloudynight/blob/master/Images/sensordetail.jpg)
+![Microcontroller Stack](https://github.com/nickkunz/cloudynight/blob/master/Images/stack.jpg)
+![LED Lights](https://github.com/nickkunz/cloudynight/blob/master/Images/leds.jpg)
+![Tech Schematic](https://github.com/nickkunz/cloudynight/blob/master/Images/schematic.jpg)
 
 ## Implementation
 ![Implementation0](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
