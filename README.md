@@ -22,12 +22,12 @@ This work was completed with Shuyang Huang and Shiori Osakata in partial fulfill
 ![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation1.png)
 
 ## Process & Technology
-![Cloud](https://github.com/nickkunz/cloudynight/blob/master/Images/cloud.jpg)
-![Sensors](https://github.com/nickkunz/cloudynight/blob/master/Images/sensors.jpg)
 ![Sensor Detail](https://github.com/nickkunz/cloudynight/blob/master/Images/sensordetail.jpg)
+![Sensors](https://github.com/nickkunz/cloudynight/blob/master/Images/sensors.jpg)
 ![Microcontroller Stack](https://github.com/nickkunz/cloudynight/blob/master/Images/stack.jpg)
 ![LED Lights](https://github.com/nickkunz/cloudynight/blob/master/Images/leds.jpg)
 ![Tech Schematic](https://github.com/nickkunz/cloudynight/blob/master/Images/schematic.jpg)
+![Cloud](https://github.com/nickkunz/cloudynight/blob/master/Images/cloud.jpg)
 
 ## Implementation
 ![Implementation0](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
