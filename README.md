@@ -16,12 +16,10 @@ The project was implemented in Arduino. The code include here is intended for ex
 This work was completed with Shuyang Huang and Shiori Osakata in partial fulfillment for the course Urban Informatics II at Columbia University GSAPP in 2019. A video of the making of Cloudy Night can be found <a href="https://www.youtube.com/watch?v=UFdZAbp3dc4&t=0s">here</a>.
 
 ## Concept
+![Interactivity](https://github.com/nickkunz/cloudynight/blob/master/Images/interaction.png)
 ![Sketch](https://github.com/nickkunz/cloudynight/blob/master/Images/sketch.png)
 ![Concept](https://github.com/nickkunz/cloudynight/blob/master/Images/concept.png)
 ![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation1.png)
-
-## Interactivity
-![Interactivity](https://github.com/nickkunz/cloudynight/blob/master/Images/interaction.png)
 
 ## Process & Technology
 ![Sensor Detail](https://github.com/nickkunz/cloudynight/blob/master/Images/sensordetail.jpg)
