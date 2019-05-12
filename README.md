@@ -2,7 +2,6 @@
 
 ![Rendering](https://github.com/nickkunz/cloudynight/blob/master/Images/rendering.jpg)
 
-
 ## Executive Summary
 Cloudy Night is an interactive lighting and data collecting prototype. The device was developed to provide illuminated feedback loops in low light conditions throughout the city while collecting unidentifiable data on its participants. The intent of the project was to assess if interactive lighting could enhance public park engagement and safety. 
 
@@ -23,7 +22,6 @@ This work was completed with Shuyang Huang and Shiori Osakata in partial fulfill
 
 ## Process & Technology
 ![Sensor Detail](https://github.com/nickkunz/cloudynight/blob/master/Images/sensordetail.jpg)
-![Sensors](https://github.com/nickkunz/cloudynight/blob/master/Images/sensors.jpg)
 ![Microcontroller Stack](https://github.com/nickkunz/cloudynight/blob/master/Images/stack.jpg)
 ![LED Lights](https://github.com/nickkunz/cloudynight/blob/master/Images/leds.jpg)
 ![Tech Schematic](https://github.com/nickkunz/cloudynight/blob/master/Images/schematic.jpg)
