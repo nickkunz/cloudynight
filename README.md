@@ -19,9 +19,10 @@ This work was completed with the help of Shuyang Huang and Shiori Osakata in par
 ## Concept
 ![Concept](https://github.com/nickkunz/cloudynight/blob/master/Images/concept.png)
 ![Sketch](https://github.com/nickkunz/cloudynight/blob/master/Images/sketch.png)
+![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation1.png)
 
 ## Implementation
-![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
+![Implementation0](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation.jpeg)
 ![Implementation2](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation2.jpg)
 
 ## Data Collection
