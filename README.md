@@ -18,6 +18,8 @@ This work was completed with Shuyang Huang and Shiori Osakata in partial fulfill
 ## Concept
 ![Sketch](https://github.com/nickkunz/cloudynight/blob/master/Images/sketch.png)
 ![Interactivity](https://github.com/nickkunz/cloudynight/blob/master/Images/interaction.png)
+
+## Realization 
 ![Concept](https://github.com/nickkunz/cloudynight/blob/master/Images/concept.png)
 ![Implementation1](https://github.com/nickkunz/cloudynight/blob/master/Images/implementation1.png)
 
