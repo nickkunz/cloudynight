@@ -1,59 +1,50 @@
 // project title: cloudy night
-// description: interactive led light data logging device
+// description: interactive led lighting and data logging device
 // by: shuyang huang, shiori osakata, nick kunz
-// advisor: dr anthony vanky
+// advisor: dr. anthony vanky
 // urban informatics II, columbia university gsapp
 
-
 //---- requirements ----//
-
 
 // data logger
 #include <SPI.h>
 #include <SD.h>
 
 // serial clock
-#include "RTClib.h"
-
-RTC_DS3231 rtc;
+#include <RTClib.h>
 
 // human sensor
 #include <Wire.h>
-#include "SparkFun_AK975X_Arduino_Library.h"
-// download here: https://github.com/sparkfun/SparkFun_AK975X_Arduino_Library
+#include <SparkFun_AK975X_Arduino_Library.h>
 
-// led lights
-#include "SPI.h" 
-#include "Adafruit_WS2801.h"
+// lights
+#include <Adafruit_WS2801.h>
+#include <SPI.h>
 #ifdef __AVR_ATtiny85__
- #include <avr/power.h>
+#include <avr/power.h>
 #endif
-// download here: https://github.com/adafruit/Adafruit-WS2801-Library
-
-
-//---- initialize ----//
-
 
 // hook human sensors object to the library
 AK975X movementSensor;
 
-// human sensor
+// hook serial clock
+RTC_DS3231 rtc;
+
+// initialize human sensor variables
 int ir1, ir2, ir3, ir4, upValue, temperature;
 int ir1map, ir2map, ir3map, ir4map;
 
-// sd data logger (pin 10)
+// sd data logger shield pin 10
 const int chipSelect = 10;
 
-// data and serial clock pins
+// initialize pins
 int dataPin = 2;
 int clockPin = 3;
 
 // first variable to the number of pixels (25 = 25 pixels in a row)
 Adafruit_WS2801 strip = Adafruit_WS2801(25, dataPin, clockPin);
 
-
 //---- setup ----//
-
 
 // device setup
 void setup() {
@@ -62,45 +53,43 @@ void setup() {
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
-  } // close serial port open
+  }
 
   // start sd data logger
   if (!SD.begin(chipSelect)) {
     Serial.println("Card failed, or not present");
     while (1);
-  } // close sd data logger warning
+  }
 
   // sd serial clock
   if (! rtc.begin()) {
     Serial.println("Couldn't find RTC");
     while (1);
-  } // close sd serial clock warning
+  }
 
   if (rtc.lostPower()) {
     Serial.println("RTC lost power, lets set the time!");
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  } // close sd serial clock warning
+  }
 
   // start human sensor
   Wire.begin();
   if (movementSensor.begin() == false) {
     Serial.println("Device not found. Check wiring.");
     while (1);
-  } // close human sensor warning
+  }
 
   // setup led
   strip.begin();
-  strip.show();  // led contents ('off' by default)
+  strip.show();  // led contents (to start they are all 'off')
 
 } // close device setup
 
-
 //---- program ----//
-
 
 // device program
 void loop() {
-  
+
   // initialize sensor
   if (movementSensor.available()) {
     float ir1 = movementSensor.getIR1();
@@ -110,27 +99,27 @@ void loop() {
     float upValue = ir1 + ir2 + ir3 + ir4;
     float tempF = movementSensor.getTemperatureF();
 
-    // led light threshold change from human sensor
-    if (ir1 + ir2 + ir3 + ir4 > 4500) {    
-      colorChange5(); 
-      } // close closest distance 
-      
-    else if (ir1 + ir2 + ir3 + ir4 > 3500) {    
-      colorChange4(); 
-      } // close close distance
+    // led lights
+    if (ir1 + ir2 + ir3 + ir4 > 4500) {
+      colorChange5();
+    }
 
-    else if (ir1 + ir2 + ir3 + ir4 > 2400) {    
-      colorChange3(); 
-      } // close near distance
-      
-    else if (ir1 + ir2 + ir3 + ir4 > 1300) {    
-      colorChange2(); 
-      } // close furthest distance
+    else if (ir1 + ir2 + ir3 + ir4 > 3500) {
+      colorChange4();
+    }
 
-    else {    
-      blueBlinkCycle(10); 
-      } // close default (no human presence)
-     
+    else if (ir1 + ir2 + ir3 + ir4 > 2400) {
+      colorChange3();
+    }
+
+    else if (ir1 + ir2 + ir3 + ir4 > 1300) {
+      colorChange2();
+    }
+
+    else {
+      blueBlinkCycle(10);
+    }
+
     // dummy register after new data is read
     movementSensor.refresh();
 
@@ -173,7 +162,7 @@ void loop() {
     // data logging fail warning message
     else {
       Serial.println("error opening datalog.txt");
-    } // close data logging fail warning message
+    }
 
     // view data collection in serial port
     Serial.print("\t1:Up[");
@@ -209,105 +198,111 @@ void loop() {
 
 } // close device program
 
-// create colorChange: closest distance
+// create colorChange
 void colorChange5(void) {
 
-    colorWipe(Color(255, 0, 0), 4);      // red
-    colorWipe(Color(255, 50, 0), 4);     // orange 
-    colorWipe(Color(255, 255, 0), 4);    // yellow 
-    colorWipe(Color(255, 255, 255), 4);  // white
-    colorWipe(Color(0, 255, 0), 4);      // green 
-    colorWipe(Color(0, 255, 255), 4);    // aqua
-    colorWipe(Color(0, 0, 255), 4);      // blue 
-    colorWipe(Color(80, 0, 80), 4);      // purple
-    colorWipe(Color(255, 20, 20), 4);    // pink     
+  colorWipe(Color(255, 0, 0), 4);      // red
+  colorWipe(Color(255, 50, 0), 4);     // orange
+  colorWipe(Color(255, 255, 0), 4);    // yellow
+  colorWipe(Color(255, 255, 255), 4);  // white
+  colorWipe(Color(0, 255, 0), 4);      // green
+  colorWipe(Color(0, 255, 255), 4);    // aqua
+  colorWipe(Color(0, 0, 255), 4);      // blue
+  colorWipe(Color(80, 0, 80), 4);      // purple
+  colorWipe(Color(255, 20, 20), 4);    // pink
+}
 
-} // close colorChange: closest distance
-
-// create colorChange: close distance
+// create colorChange
 void colorChange4(void) {
 
-    colorWipe(Color(255, 255, 255), 6);  // white
-    colorWipe(Color(0, 255, 0), 6);      // green 
-    colorWipe(Color(0, 255, 255), 6);    // aqua
-    colorWipe(Color(0, 0, 255), 6);      // blue 
-    colorWipe(Color(80, 0, 80), 6);      // purple
-    colorWipe(Color(255, 20, 20), 6);    // pink      
+  colorWipe(Color(255, 255, 255), 6);  // white
+  colorWipe(Color(0, 255, 0), 6);      // green
+  colorWipe(Color(0, 255, 255), 6);    // aqua
+  colorWipe(Color(0, 0, 255), 6);      // blue
+  colorWipe(Color(80, 0, 80), 6);      // purple
+  colorWipe(Color(255, 20, 20), 6);    // pink
+}
 
-} // close colorChange: close distance
-
-// create colorChange: near distance
+// create colorChange
 void colorChange3(void) {
 
-    colorWipe(Color(0, 255, 255), 12);    // aqua
-    colorWipe(Color(0, 0, 255), 12);      // blue 
-    colorWipe(Color(80, 0, 80), 12);      // purple    
+  colorWipe(Color(0, 255, 255), 12);    // aqua
+  colorWipe(Color(0, 0, 255), 12);      // blue
+  colorWipe(Color(80, 0, 80), 12);      // purple
+}
 
-} // close colorChange: near distance
-
-// create colorChange: furthest distance
+// create colorChange
 void colorChange2(void) {
 
-    colorWipe(Color(0, 255, 255), 18);    // aqua
-    colorWipe(Color(0, 0, 255), 18);      // blue  
+  colorWipe(Color(0, 255, 255), 18);    // aqua
+  colorWipe(Color(0, 0, 255), 18);      // blue
+}
 
-} // close colorChange: furthest distance
+// create colorChange
+void colorChange1(void) {
+
+  colorWipe(Color(0, 255, 255), 36);    // aqua
+}
 
 
-//---- function calls ----//
+//---- functions ----//
 
 
-// create RGB color codes
-uint32_t Color(byte r, byte g, byte b)
-{
+// Create a 24 bit color value from R,G,B
+uint32_t Color(byte r, byte g, byte b) {
+
   uint32_t c;
+
   c = r;
   c <<= 8;
   c |= g;
   c <<= 8;
   c |= b;
   return c;
-} // close RGB color codes
+}
 
 // create colorWipe
 void colorWipe(uint32_t c, uint8_t wait) {
+
   int i;
- 
-  for (i=0; i < strip.numPixels(); i++) {
-      strip.setPixelColor(i, c);
-      strip.show();
-      delay(wait);
-  }
-} // close colorWipe
 
-// create blue color wheel
-uint32_t Wheel(byte WheelPos)
-{
+  for (i = 0; i < strip.numPixels(); i++) {
+    strip.setPixelColor(i, c);
+    strip.show();
+    delay(wait);
+  }
+}
+
+// blue color wheel
+uint32_t Wheel(byte WheelPos) {
+
   if (WheelPos < 170) {
-   WheelPos -= 85;
-   return Color(0, 255 - WheelPos, 255);
-  } else {
-
+      WheelPos -= 85;
+      return Color(0, 255 - WheelPos, 255);
   }
-} // close blue color wheel
-
-// create blue blink color cycle
-void blueBlinkCycle(uint8_t wait) {
-  int i, j;
   
-  for (j=0; j < 256 * 1; j++) {     // 1 cycle of all 25 colors in the wheel
-    for (i=0; i < strip.numPixels(); i++) {
+  else {
+  }
+}
+
+// blue blink color cycle
+void blueBlinkCycle(uint8_t wait) {
+
+  int i, j;
+
+  for (j = 0; j < 256 * 1; j++) {   // 1 cycle of all 25 colors in the wheel
+    for (i = 0; i < strip.numPixels(); i++) {
       // tricky math! we use each pixel as a fraction of the full 96-color wheel
       // (thats the i / strip.numPixels() part)
-      // then add in j which makes the colors go around per pixel
+      // Then add in j which makes the colors go around per pixel
       // the % 96 is to make the wheel cycle around
       strip.setPixelColor(i, Wheel( ((i * 256 / strip.numPixels()) + j) % 256) );
-    }  
+    }
+    
     strip.show();   // write all the pixels out
     delay(wait);
   }
-}  // close blue blink color cycle
-
+}
 // end
 
 /*****************************************************************************
